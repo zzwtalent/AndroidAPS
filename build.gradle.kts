@@ -4,8 +4,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
     repositories {
-        maven("https://mirrors.cloud.tencent.com/nexus/repository/google")
-        maven("https://mirrors.cloud.tencent.com/nexus/repository/maven-public/")
+        google()
+        mavenCentral()
     }
     dependencies {
         classpath(libs.com.android.tools.build)
@@ -29,8 +29,9 @@ plugins {
 
 allprojects {
     repositories {
-        maven("https://mirrors.cloud.tencent.com/nexus/repository/google")
-        maven("https://mirrors.cloud.tencent.com/nexus/repository/maven-public/")
+        google()
+        mavenCentral()
+        maven("https://maven.google.com")
         maven("https://jitpack.io")
     }
     tasks.withType<KotlinCompile>().configureEach {
