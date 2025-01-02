@@ -68,13 +68,14 @@ enum class Sources {
     Food,               //From Food plugin
     ConfigBuilder,      //From ConfigBuilder Plugin
     Overview,           //From OverViewPlugin
-    Ottai,              //From Ottai Plugin
+    Outai,              //From Ottai Plugin
+    SiBionic,
+    Sino,
     Stats,              //From Stat Activity
     Aaps,               // MainApp
     BgFragment,
     Garmin,
     Database,           // for PersistenceLayer
-    Unknown,             //if necessary
-    SyaiTag
+    Unknown             //if necessary
     ;
 }
