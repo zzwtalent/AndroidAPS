@@ -22,7 +22,6 @@ import app.aaps.plugins.source.PathedOTAppPlugin
 import app.aaps.plugins.source.PathedSIAppPlugin
 import app.aaps.plugins.source.PathedSinoAppPlugin
 import app.aaps.plugins.source.PoctechPlugin
-import app.aaps.plugins.source.SyaiTagPlugin
 import app.aaps.plugins.source.TomatoPlugin
 import app.aaps.plugins.source.XdripSourcePlugin
 import dagger.android.DaggerBroadcastReceiver

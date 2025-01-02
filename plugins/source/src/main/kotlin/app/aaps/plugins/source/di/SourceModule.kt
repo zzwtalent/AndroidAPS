@@ -12,7 +12,6 @@ import app.aaps.plugins.source.PathedOTAppPlugin
 import app.aaps.plugins.source.PathedSIAppPlugin
 import app.aaps.plugins.source.PathedSinoAppPlugin
 import app.aaps.plugins.source.PoctechPlugin
-import app.aaps.plugins.source.SyaiTagPlugin
 import app.aaps.plugins.source.TomatoPlugin
 import app.aaps.plugins.source.XdripSourcePlugin
 import app.aaps.plugins.source.activities.RequestDexcomPermissionActivity
@@ -40,8 +39,6 @@ abstract class SourceModule {
     @ContributesAndroidInjector abstract fun contributesGlimpWorker(): GlimpPlugin.GlimpWorker
     @ContributesAndroidInjector abstract fun contributesPoctechWorker(): PoctechPlugin.PoctechWorker
     @ContributesAndroidInjector abstract fun contributesTomatoWorker(): TomatoPlugin.TomatoWorker
-    @ContributesAndroidInjector abstract fun contributesOttaiWorker(): OttaiPlugin.OttaiWorker
-    @ContributesAndroidInjector abstract fun contributesOTAppWorker(): SyaiTagPlugin.SyaiTagWorker
 
     @ContributesAndroidInjector abstract fun contributesRequestDexcomPermissionActivity(): RequestDexcomPermissionActivity
 
