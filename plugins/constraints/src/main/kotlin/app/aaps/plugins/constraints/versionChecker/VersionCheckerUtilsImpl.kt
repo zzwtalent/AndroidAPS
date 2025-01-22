@@ -49,8 +49,8 @@ class VersionCheckerUtilsImpl @Inject constructor(
             Thread {
                 try {
                     val definition: String = URL("https://gitee.com/diyaps/AndroidAPS/raw/versions/definition.json").readText()
-                    val version: String? = AllowedVersions().findByApi(definition, Build.VERSION.SDK_INT)?.optString("supported")
-                    val newVersionAvailable = compareWithCurrentVersion(version, config.get().VERSION_NAME)
+                    val version: String? = AllowedVersions.findByApi(definition, Build.VERSION.SDK_INT)?.optString("supported")
+                    val newVersionByApi = compareWithCurrentVersion(version, config.get().VERSION_NAME)
 
                     // App expiration
                     if (newVersionByApi || config.get().isDev()) {
