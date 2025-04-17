@@ -40,10 +40,11 @@ import app.aaps.plugins.source.GlunovoPlugin
 import app.aaps.plugins.source.IntelligoPlugin
 import app.aaps.plugins.source.MM640gPlugin
 import app.aaps.plugins.source.NSClientSourcePlugin
-import app.aaps.plugins.source.OttaiPlugin
+import app.aaps.plugins.source.PathedOTAppPlugin
+import app.aaps.plugins.source.PathedSIAppPlugin
+import app.aaps.plugins.source.PathedSinoAppPlugin
 import app.aaps.plugins.source.PoctechPlugin
 import app.aaps.plugins.source.RandomBgPlugin
-import app.aaps.plugins.source.SyaiTagPlugin
 import app.aaps.plugins.source.TomatoPlugin
 import app.aaps.plugins.source.XdripSourcePlugin
 import app.aaps.plugins.sync.garmin.GarminPlugin
@@ -429,20 +430,26 @@ abstract class PluginsListModule {
     @Binds
     @AllConfigs
     @IntoMap
+    @IntKey(666)
+    abstract fun bindPatchedOTAppPlugin(plugin: PathedOTAppPlugin): PluginBase
+
+    @Binds
+    @AllConfigs
+    @IntoMap
     @IntKey(471)
-    abstract fun bindPatchedOttaiPlugin(plugin: OttaiPlugin): PluginBase
+    abstract fun bindPatchedSIAppPlugin(plugin: PathedSIAppPlugin): PluginBase
+
+    @Binds
+    @AllConfigs
+    @IntoMap
+    @IntKey(472)
+    abstract fun bindPatchedSinoAppPlugin(plugin: PathedSinoAppPlugin): PluginBase
 
     @Binds
     @AllConfigs
     @IntoMap
     @IntKey(473)
     abstract fun bindIntelligoPlugin(plugin: IntelligoPlugin): PluginBase
-
-    @Binds
-    @AllConfigs
-    @IntoMap
-    @IntKey(474)
-    abstract fun bindPatchedSyaiTagPlugin(plugin: SyaiTagPlugin): PluginBase
 
     @Binds
     @AllConfigs
