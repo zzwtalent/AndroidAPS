@@ -37,15 +37,15 @@ class Objective0(injector: HasAndroidInjector) : Objective(injector, "config", R
                 return activePlugin.firstActiveSync?.hasWritePermission == true || tidepoolPlugin?.hasWritePermission == true
             }
         })
-        tasks.add(object : Task(this, app.aaps.core.ui.R.string.virtualpump_uploadstatus_title) {
-            override fun isCompleted(): Boolean {
-                return preferences.get(BooleanKey.VirtualPumpStatusUpload) || tidepoolPlugin?.hasWritePermission == true
-            }
+        // tasks.add(object : Task(this, app.aaps.core.ui.R.string.virtualpump_uploadstatus_title) {
+        //     override fun isCompleted(): Boolean {
+        //         return preferences.get(BooleanKey.VirtualPumpStatusUpload) || tidepoolPlugin?.hasWritePermission == true
+        //     }
 
-            override fun shouldBeIgnored(): Boolean {
-                return !virtualPumpPlugin.isEnabled()
-            }
-        })
+        //     override fun shouldBeIgnored(): Boolean {
+        //         return !virtualPumpPlugin.isEnabled()
+        //     }
+        // })
         tasks.add(
             object : Task(this, R.string.objectives_pumpstatusavailableinns) {
                 override fun isCompleted(): Boolean {
