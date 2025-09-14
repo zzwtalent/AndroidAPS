@@ -27,11 +27,11 @@ class Objective0(injector: HasAndroidInjector) : Objective(injector, "config", R
     val tidepoolPlugin get() = activePlugin.getSpecificPluginsListByInterface(Tidepool::class.java).firstOrNull() as Tidepool?
 
     init {
-        tasks.add(object : Task(this, R.string.objectives_bgavailableinns) {
-            override fun isCompleted(): Boolean {
-                return sp.getBoolean(app.aaps.core.utils.R.string.key_objectives_bg_is_available_in_ns, false) || tidepoolPlugin?.hasWritePermission == true
-            }
-        })
+        // tasks.add(object : Task(this, R.string.objectives_bgavailableinns) {
+        //     override fun isCompleted(): Boolean {
+        //         return sp.getBoolean(app.aaps.core.utils.R.string.key_objectives_bg_is_available_in_ns, false) || tidepoolPlugin?.hasWritePermission == true
+        //     }
+        // })
         tasks.add(object : Task(this, R.string.synchaswritepermission) {
             override fun isCompleted(): Boolean {
                 return activePlugin.firstActiveSync?.hasWritePermission == true || tidepoolPlugin?.hasWritePermission == true
