@@ -57,9 +57,9 @@ class ObjectivesPlugin @Inject constructor(
     private fun setupObjectives() {
         objectives.clear()
         objectives.add(Objective0(injector))
-        objectives.add(Objective1(injector))
-        objectives.add(Objective2(injector))
-        objectives.add(Objective3(injector))
+        // objectives.add(Objective1(injector))
+        // objectives.add(Objective2(injector))
+        // objectives.add(Objective3(injector))
         objectives.add(Objective4(injector))
         objectives.add(Objective5(injector))
         objectives.add(Objective6(injector))
