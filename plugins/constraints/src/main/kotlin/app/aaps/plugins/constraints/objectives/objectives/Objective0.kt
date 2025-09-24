@@ -53,11 +53,11 @@ class Objective0(injector: HasAndroidInjector) : Objective(injector, "config", R
         //         }
         //     }.learned(Learned(R.string.objectives_0_learned))
         // )
-        tasks.add(object : Task(this, R.string.hasbgdata) {
-            override fun isCompleted(): Boolean {
-                return iobCobCalculator.ads.lastBg() != null
-            }
-        })
+        // tasks.add(object : Task(this, R.string.hasbgdata) {
+        //     override fun isCompleted(): Boolean {
+        //         return iobCobCalculator.ads.lastBg() != null
+        //     }
+        // })
         tasks.add(object : Task(this, R.string.loopenabled) {
             override fun isCompleted(): Boolean {
                 return (loop as PluginBase).isEnabled()
