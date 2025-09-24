@@ -60,12 +60,12 @@ class ObjectivesPlugin @Inject constructor(
         // objectives.add(Objective1(injector))
         // objectives.add(Objective2(injector))
         // objectives.add(Objective3(injector))
-        objectives.add(Objective4(injector))
-        objectives.add(Objective5(injector))
-        objectives.add(Objective6(injector))
-        objectives.add(Objective7(injector))
-        objectives.add(Objective9(injector))
-        objectives.add(Objective10(injector))
+        // objectives.add(Objective4(injector))
+        // objectives.add(Objective5(injector))
+        // objectives.add(Objective6(injector))
+        // objectives.add(Objective7(injector))
+        // objectives.add(Objective9(injector))
+        // objectives.add(Objective10(injector))
         // edit companion object if you remove/add Objective
     }
 
