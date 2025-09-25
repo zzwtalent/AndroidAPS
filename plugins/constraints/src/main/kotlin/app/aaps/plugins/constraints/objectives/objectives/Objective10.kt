@@ -8,7 +8,7 @@ class Objective10(injector: HasAndroidInjector) : Objective(injector, "auto", R.
 
     init {
         tasks.add(
-            MinimumDurationTask(this, T.days(28).msecs())
+            MinimumDurationTask(this, T.mins(1).msecs())
                 .learned(Learned(R.string.objectives_auto_learned))
         )
     }

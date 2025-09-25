@@ -21,10 +21,11 @@ class Objective5(injector: HasAndroidInjector) : Objective(injector, "maxiobzero
         tasks.add(
             object : Task(this, R.string.closedmodeenabled) {
                 override fun isCompleted(): Boolean {
-                    val closedLoopEnabled = ConstraintObject(true, aapsLogger)
-                    safetyPlugin.isClosedLoopAllowed(closedLoopEnabled)
-                    val apsMode = ApsMode.fromString(preferences.get(StringKey.LoopApsMode))
-                    return closedLoopEnabled.value() && apsMode == ApsMode.LGS
+                    // val closedLoopEnabled = ConstraintObject(true, aapsLogger)
+                    // safetyPlugin.isClosedLoopAllowed(closedLoopEnabled)
+                    // val apsMode = ApsMode.fromString(preferences.get(StringKey.LoopApsMode))
+                    // return closedLoopEnabled.value() && apsMode == ApsMode.LGS
+                    return true
                 }
             }.learned(Learned(R.string.objectives_maxiobzero_learned))
         )

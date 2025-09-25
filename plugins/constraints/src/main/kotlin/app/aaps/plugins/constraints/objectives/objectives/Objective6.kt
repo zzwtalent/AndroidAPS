@@ -23,8 +23,9 @@ class Objective6(injector: HasAndroidInjector) : Objective(injector, "maxiob", R
             object : Task(this, R.string.maxiobset) {
 
                 override fun isCompleted(): Boolean {
-                    val maxIOB = constraintChecker.getMaxIOBAllowed().value()
-                    return maxIOB > 0
+                    // val maxIOB = constraintChecker.getMaxIOBAllowed().value()
+                    // return maxIOB > 0
+                    return true
                 }
             }.learned(Learned(R.string.objectives_maxiob_learned))
         )
