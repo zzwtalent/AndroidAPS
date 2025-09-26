@@ -14,11 +14,11 @@ class Objective6(injector: HasAndroidInjector) : Objective(injector, "maxiob", R
     @Inject lateinit var constraintChecker: ConstraintsChecker
 
     init {
-        tasks.add(MinimumDurationTask(this, T.days(1).msecs()))
-        tasks.add(
-            object : Task(this, R.string.closedmodeenabled) {
-                override fun isCompleted(): Boolean = ApsMode.fromString(preferences.get(StringKey.LoopApsMode)) == ApsMode.CLOSED
-            })
+        // tasks.add(MinimumDurationTask(this, T.mins(1).msecs()))
+        // tasks.add(
+        //     object : Task(this, R.string.closedmodeenabled) {
+        //         override fun isCompleted(): Boolean = ApsMode.fromString(preferences.get(StringKey.LoopApsMode)) == ApsMode.CLOSED
+        //     })
         tasks.add(
             object : Task(this, R.string.maxiobset) {
 
