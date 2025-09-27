@@ -1,6 +1,8 @@
 import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.io.FileInputStream
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.ksp)
@@ -36,6 +38,43 @@ fun generateDate(): String {
     return stringBuilder.toString()
 }
 
+val keyProps = Properties()
+val keyPropsFile: File = rootProject.file("keystore/keystore.properties")
+if (keyPropsFile.exists()) {
+    keyProps.load(FileInputStream(keyPropsFile))
+}
+
+fun getStoreFile(): String {
+    var storeFile = keyProps["storeFile"].toString()
+    if (storeFile.isEmpty()) {
+        storeFile = System.getenv("storeFile") ?: ""
+    }
+    return storeFile
+}
+
+fun getStorePassword(): String {
+    var storePassword = keyProps["storePassword"].toString()
+    if (storePassword.isEmpty()) {
+        storePassword = System.getenv("storePassword") ?: ""
+    }
+    return storePassword
+}
+
+fun getKeyAlias(): String {
+    var keyAlias = keyProps["keyAlias"].toString()
+    if (keyAlias.isEmpty()) {
+        keyAlias = System.getenv("keyAlias") ?: ""
+    }
+    return keyAlias
+}
+
+fun getKeyPassword(): String {
+    var keyPassword = keyProps["keyPassword"].toString()
+    if (keyPassword.isEmpty()) {
+        keyPassword = System.getenv("keyPassword") ?: ""
+    }
+    return keyPassword
+}
 
 android {
     namespace = "app.aaps.wear"
@@ -47,15 +86,27 @@ android {
         buildConfigField("String", "BUILDVERSION", "\"${generateGitBuild()}-${generateDate()}\"")
     }
 
-    android {
-        buildTypes {
-            debug {
-                enableUnitTestCoverage = true
-                // Disable androidTest coverage, since it performs offline coverage
-                // instrumentation and that causes online (JavaAgent) instrumentation
-                // to fail in this project.
-                enableAndroidTestCoverage = false
+    signingConfigs {
+        create("release") {
+            if (getStoreFile().isNotEmpty() && getStorePassword().isNotEmpty() && getKeyAlias().isNotEmpty() && getKeyPassword().isNotEmpty()) {
+                storeFile = file(getStoreFile())
+                storePassword = getStorePassword()
+                keyAlias = getKeyAlias()
+                keyPassword = getKeyPassword()
             }
+        }
+    }
+
+    buildTypes {
+        debug {
+            enableUnitTestCoverage = true
+            // Disable androidTest coverage, since it performs offline coverage
+            // instrumentation and that causes online (JavaAgent) instrumentation
+            // to fail in this project.
+            enableAndroidTestCoverage = false
+        }
+        release {
+            signingConfig = signingConfigs.findByName("release")
         }
     }
 
@@ -92,7 +143,6 @@ allprojects {
     repositories {
     }
 }
-
 
 dependencies {
     implementation(project(":shared:impl"))
