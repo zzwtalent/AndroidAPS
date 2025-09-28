@@ -211,12 +211,18 @@ class DataLayerListenerServiceWear : WearableListenerService() {
     private var transcriptionNodeId: String? = null
 
     private fun updateTranscriptionCapability() {
-        val capabilityInfo: CapabilityInfo = Tasks.await(
-            capabilityClient.getCapability(PHONE_CAPABILITY, CapabilityClient.FILTER_REACHABLE)
-        )
-        aapsLogger.debug(LTag.WEAR, "Nodes: ${capabilityInfo.nodes.joinToString(", ") { it.displayName + "(" + it.id + ")" }}")
-        pickBestNodeId(capabilityInfo.nodes)?.let { transcriptionNodeId = it }
-        aapsLogger.debug(LTag.WEAR, "Selected node: $transcriptionNodeId")
+        try {
+            val capabilityInfo: CapabilityInfo = Tasks.await(
+                capabilityClient.getCapability(PHONE_CAPABILITY, CapabilityClient.FILTER_REACHABLE)
+            )
+            aapsLogger.debug(LTag.WEAR, "Nodes: ${capabilityInfo.nodes.joinToString(", ") { it.displayName + "(" + it.id + ")" }}")
+            pickBestNodeId(capabilityInfo.nodes)?.let { transcriptionNodeId = it }
+            aapsLogger.debug(LTag.WEAR, "Selected node: $transcriptionNodeId")
+        } catch (e: Exception) {
+            aapsLogger.error(LTag.WEAR, "Failed to get capability: ${e.localizedMessage}")
+            // Gracefully handle the case where Wearable.API is not available
+            transcriptionNodeId = null
+        }
     }
 
     // Find a nearby node or pick one arbitrarily
