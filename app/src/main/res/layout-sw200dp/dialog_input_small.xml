@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:textAppearance="@style/TextAppearance.SmallScreen" />
+
+    <EditText
+        android:id="@+id/dialog_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_field_height"
+        android:layout_marginBottom="16dp"
+        android:background="?attr/editTextBackground"
+        android:inputType="text"
+        android:padding="@dimen/input_field_padding"
+        android:textSize="@dimen/text_size_medium"
+        style="@style/EditText.SmallScreen" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/dialog_cancel"
+            android:layout_width="@dimen/button_min_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginEnd="8dp"
+            android:text="@android:string/cancel"
+            style="@style/Button.SmallScreen" />
+
+        <Button
+            android:id="@+id/dialog_ok"
+            android:layout_width="@dimen/button_min_width"
+            android:layout_height="@dimen/button_height"
+            android:text="@android:string/ok"
+            style="@style/Button.SmallScreen" />
+    </LinearLayout>
+</LinearLayout>

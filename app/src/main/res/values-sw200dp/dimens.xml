@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Small screen device (smartwatch) adaptations -->
+    <!-- General UI scaling for small screens -->
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    
+    <!-- Text size adaptations -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_large">16sp</dimen>
+    <dimen name="text_size_xlarge">18sp</dimen>
+    
+    <!-- Button sizes -->
+    <dimen name="button_min_width">64dp</dimen>
+    <dimen name="button_height">32dp</dimen>
+    
+    <!-- Input field adaptations -->
+    <dimen name="input_field_height">36dp</dimen>
+    <dimen name="input_field_padding">6dp</dimen>
+    
+    <!-- Toolbar adaptations -->
+    <dimen name="toolbar_height">44dp</dimen>
+    <dimen name="toolbar_text_size">14sp</dimen>
+    
+    <!-- Navigation adaptations -->
+    <dimen name="nav_item_height">48dp</dimen>
+    <dimen name="nav_item_text_size">14sp</dimen>
+    
+    <!-- Widget adaptations -->
+    <dimen name="widget_margin">0dp</dimen>
+    
+    <!-- Tab layout adaptations -->
+    <dimen name="tab_min_width">60dp</dimen>
+    <dimen name="tab_text_size">12sp</dimen>
+</resources>

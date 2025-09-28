@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Small screen device (smartwatch) optimized themes -->
+    
+    <!-- Base application theme for small screens -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:fontFamily">@font/sans-serif</item>
+        <item name="textAppearanceHeadline1">@style/TextAppearance.AppCompat.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.AppCompat.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.AppCompat.Headline3</item>
+    </style>
+    
+    <!-- Theme without ActionBar for small screens -->
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <!-- Launcher theme for small screens -->
+    <style name="AppTheme.Launcher" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+    
+    <!-- Text appearance optimizations for small screens -->
+    <style name="TextAppearance.SmallScreen" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+    
+    <!-- Button style optimized for small screens -->
+    <style name="Button.SmallScreen" parent="Widget.AppCompat.Button">
+        <item name="android:minWidth">64dp</item>
+        <item name="android:height">32dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+    
+    <!-- EditText style optimized for small screens -->
+    <style name="EditText.SmallScreen" parent="Widget.AppCompat.EditText">
+        <item name="android:height">36dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+    
+    <!-- Toolbar style for small screens -->
+    <style name="Toolbar.SmallScreen" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:minHeight">44dp</item>
+        <item name="titleTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Small</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Small</item>
+    </style>
+    
+    <!-- TabLayout style for small screens -->
+    <style name="TabLayout.SmallScreen" parent="Widget.Design.TabLayout">
+        <item name="tabMinWidth">60dp</item>
+        <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
+        <item name="tabIndicatorHeight">2dp</item>
+    </style>
+    
+    <!-- NavigationView style for small screens -->
+    <style name="NavigationView.SmallScreen" parent="Widget.Design.NavigationView">
+        <item name="itemTextAppearance">@style/TextAppearance.SmallScreen</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+    </style>
+</resources>
