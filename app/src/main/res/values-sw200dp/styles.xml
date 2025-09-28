@@ -8,10 +8,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="android:fontFamily">@font/sans-serif</item>
-        <item name="textAppearanceHeadline1">@style/TextAppearance.AppCompat.Headline1</item>
-        <item name="textAppearanceHeadline2">@style/TextAppearance.AppCompat.Headline2</item>
-        <item name="textAppearanceHeadline3">@style/TextAppearance.AppCompat.Headline3</item>
     </style>
     
     <!-- Theme without ActionBar for small screens -->
@@ -51,8 +47,6 @@
     <!-- Toolbar style for small screens -->
     <style name="Toolbar.SmallScreen" parent="Widget.MaterialComponents.Toolbar">
         <item name="android:minHeight">44dp</item>
-        <item name="titleTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Small</item>
-        <item name="subtitleTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Small</item>
     </style>
     
     <!-- TabLayout style for small screens -->
