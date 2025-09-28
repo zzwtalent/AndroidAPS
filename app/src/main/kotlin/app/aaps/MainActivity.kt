@@ -406,8 +406,10 @@ class MainActivity : DaggerAppCompatActivityWithResult() {
             binding.tabsNormal?.visibility = View.GONE
             binding.tabsCompact?.visibility = View.VISIBLE
             binding.toolbar.layoutParams = LinearLayout.LayoutParams(Toolbar.LayoutParams.MATCH_PARENT, resources.getDimension(app.aaps.core.ui.R.dimen.compact_height).toInt())
-            binding.tabsCompact?.let { tabs ->
-                TabLayoutMediator(tabs, binding.mainPager) { tab, position ->
+            binding.tabsCompact?.let {
+                tabs ->
+                TabLayoutMediator(tabs, binding.mainPager) {
+                    tab, position ->
                     tab.text = (binding.mainPager.adapter as TabPageAdapter).getPluginAt(position).nameShort
                 }.attach()
             }
@@ -421,8 +423,10 @@ class MainActivity : DaggerAppCompatActivityWithResult() {
                     TypedValue.complexToDimensionPixelSize(typedValue.data, resources.displayMetrics)
                 )
             }
-            binding.tabsNormal?.let { tabs ->
-                TabLayoutMediator(tabs, binding.mainPager) { tab, position ->
+            binding.tabsNormal?.let {
+                tabs ->
+                TabLayoutMediator(tabs, binding.mainPager) {
+                    tab, position ->
                     tab.text = (binding.mainPager.adapter as TabPageAdapter).getPluginAt(position).name
                 }.attach()
             }
